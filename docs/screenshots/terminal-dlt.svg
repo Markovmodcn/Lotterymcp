@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="978" viewBox="0 0 1600 978" fill="none">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#09111b" />
+<stop offset="100%" stop-color="#111b29" />
+</linearGradient>
+<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#0f1723" />
+<stop offset="100%" stop-color="#111827" />
+</linearGradient>
+</defs>
+<rect width="1600" height="100%" fill="url(#bg)" />
+<rect x="44" y="40" width="1512" height="898" rx="28" fill="url(#panel)" stroke="#223147" stroke-width="2"/>
+<rect x="44" y="40" width="1512" height="74" rx="28" fill="#0b1220" />
+<circle cx="92" cy="77" r="10" fill="#ff5f57" />
+<circle cx="124" cy="77" r="10" fill="#febc2e" />
+<circle cx="156" cy="77" r="10" fill="#28c840" />
+<text x="220" y="87" fill="#e6edf3" font-size="30" font-family="Consolas, Monaco, 'Courier New', monospace">大乐透 示例分析</text>
+<rect x="1260" y="56" width="228" height="40" rx="20" fill="#17314c" stroke="#2d4b69"/>
+<text x="1374" y="82" text-anchor="middle" fill="#8bc5ff" font-size="22" font-family="Consolas, Monaco, 'Courier New', monospace">示例输出</text>
+<text x="88" y="154" fill="#7ee787" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">$ lotterymcp analyze dlt --periods 30</text>
+<text x="88" y="184" fill="#f2cc60" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">示例数据来源: 仓库内置离线样本</text>
+<text x="88" y="226" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">分析期数: 30</text>
+<text x="88" y="268" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">有效记录: 3</text>
+<text x="88" y="310" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">最新期号: 3</text>
+<text x="88" y="352" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">最新前区: 1 2 3 4 5</text>
+<text x="88" y="394" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">最新后区: 1 2</text>
+<text x="88" y="436" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">前区热度 Top5: 1, 2, 3, 5, 7</text>
+<text x="88" y="478" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">后区热度 Top3: 1, 2, 3</text>
+<text x="88" y="520" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">回测样本: 1 期 | 前区均命中 3.0000 | 后区均命中 1.0000</text>
+<text x="88" y="562" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">总均命中: 4.0000</text>
+<text x="88" y="604" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace"></text>
+<text x="88" y="646" fill="#8bc5ff" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">高分推荐:</text>
+<text x="88" y="688" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  前区=1 2 3 4 5 | 后区=1 2 | 分数=0.740000</text>
+<text x="88" y="730" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  前区分区=5-0-0 | 后区分区=2-0</text>
+<text x="88" y="944" fill="#5f728c" font-size="22" font-family="Consolas, Monaco, 'Courier New', monospace">NEUXSBOT • www.neuxsbot.com</text>
+</svg>

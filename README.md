@@ -33,6 +33,21 @@ Lotterymcp 是一个面向 MCP 客户端的开奖数据接入工具。
 
 这个项目不是离线数据包。真实数据、权限状态和调用额度都由网站账号体系控制，本地 MCP 负责把这些能力接到 AI 工具里。
 
+## 命令行实际效果
+
+以下为命令行示例截图，其中分析图基于仓库内置示例数据生成，方便你先看清接入方式和输出结构。
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/terminal-help.svg" alt="Lotterymcp CLI 帮助界面" /></td>
+    <td width="50%"><img src="docs/screenshots/terminal-fc3d.svg" alt="福彩3D 命令行示例" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/terminal-ssq.svg" alt="双色球 命令行示例" /></td>
+    <td width="50%"><img src="docs/screenshots/terminal-dlt.svg" alt="大乐透 命令行示例" /></td>
+  </tr>
+</table>
+
 ## 通用 MCP 配置示例
 
 ```json
