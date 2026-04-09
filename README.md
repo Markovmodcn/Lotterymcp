@@ -23,39 +23,13 @@ Lotterymcp 是一个面向 MCP 客户端的开奖数据接入工具。
 - 结合你自己的购买记录一起分析，不需要手工整理开奖数据
 - 不接大模型时，也可以直接跑仓库里的 Python 分析程序
 
-## 使用前准备
+## 三步开始
 
-1. 打开 [NEUXSBOT 官网](https://www.neuxsbot.com) 注册或登录。
-2. 进入 [个人中心](https://www.neuxsbot.com/member) 查看账号状态。
-3. 在个人中心复制你的 MCP 密钥。
+1. 在 [NEUXSBOT 官网](https://www.neuxsbot.com) 注册或登录，并在 [个人中心](https://www.neuxsbot.com/member) 复制你的 MCP 密钥。
+2. 运行 `npx --yes lotterymcp@latest` 打开中文菜单；如果要长期使用，再执行 `npm i -g lotterymcp`。
+3. 填入接口地址、密钥和默认分析期数，复制生成的 MCP 配置片段到 Claude Desktop、Cursor、VS Code 等支持 MCP 的 AI 工具。
 
 这个项目不是离线数据包。真实数据、权限状态和调用额度都由网站账号体系控制，本地 MCP 负责把这些能力接到 AI 工具里。
-
-## 安装方式
-
-临时运行：
-
-```bash
-npx --yes lotterymcp@latest
-```
-
-全局安装：
-
-```bash
-npm i -g lotterymcp
-lotterymcp
-```
-
-第一次接入，直接用 `npx` 就够了。长期使用、反复改配置，建议全局安装。
-
-## 最短接入流程
-
-1. 先获取网站 MCP 密钥。
-2. 运行 `npx --yes lotterymcp@latest` 或 `lotterymcp` 打开中文菜单。
-3. 填入接口地址、密钥、默认分析期数。
-4. 生成 MCP 配置片段。
-5. 复制到你的 AI 工具中。
-6. 在 AI 对话里直接提分析需求。
 
 ## 通用 MCP 配置示例
 
