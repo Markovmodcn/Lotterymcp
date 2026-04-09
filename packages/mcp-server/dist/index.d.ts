@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import type { CallToolResult } from '@modelcontextprotocol/sdk/types.js';
-import { type LotteryMcpClientConfig } from '@nexusbot/lottery-mcp-core';
+import { type LotteryMcpClientConfig } from 'lotterymcp-core';
 import { z } from 'zod';
 export declare const MCP_SERVER_TRANSPORT = "stdio";
 export declare const MCP_SERVER_TOOLS: ("lottery.latest" | "lottery.history" | "lottery.periods" | "lottery.summary")[];
@@ -36,18 +36,18 @@ export declare const createLotteryToolCatalog: (client: LotteryMcpClientLike, op
     defaultPeriods?: number | string;
 }) => LotteryToolDefinition[];
 export declare const createLotteryMcpServer: (options: LotteryMcpClientConfig) => {
-    client: import("@nexusbot/lottery-mcp-core").LotteryMcpClient;
+    client: import("lotterymcp-core").LotteryMcpClient;
     server: McpServer;
     toolCatalog: LotteryToolDefinition[];
 };
 export declare const startLotteryMcpStdioServer: (options: LotteryMcpClientConfig) => Promise<{
-    client: import("@nexusbot/lottery-mcp-core").LotteryMcpClient;
+    client: import("lotterymcp-core").LotteryMcpClient;
     server: McpServer;
     toolCatalog: LotteryToolDefinition[];
     transport: StdioServerTransport;
 }>;
 export declare const startNbcpStdioServer: (options: LotteryMcpClientConfig) => Promise<{
-    client: import("@nexusbot/lottery-mcp-core").LotteryMcpClient;
+    client: import("lotterymcp-core").LotteryMcpClient;
     server: McpServer;
     toolCatalog: LotteryToolDefinition[];
     transport: StdioServerTransport;

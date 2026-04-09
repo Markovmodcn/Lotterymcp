@@ -1,6 +1,6 @@
 {
-  "name": "@nexusbot/lottery-mcp-core",
-  "version": "0.1.4",
+  "name": "lotterymcp-core",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "description": "Core REST client for the Lotterymcp lottery service",

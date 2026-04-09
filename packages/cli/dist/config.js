@@ -55,7 +55,7 @@ export const renderMcpConfigSnippet = (config) => JSON.stringify({
     mcpServers: {
         'neuxsbot-cp': {
             command: 'npx',
-            args: ['-y', 'neuxnbcp@latest', 'serve'],
+            args: ['-y', 'lotterymcp@latest', 'serve'],
             env: {
                 NEUXSBOT_API_BASE_URL: config.apiBaseUrl,
                 NEUXSBOT_TOKEN: config.token,

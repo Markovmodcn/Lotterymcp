@@ -1,6 +1,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
-import { LOTTERY_MCP_TOOLS, McpApiError, createLotteryMcpClient, formatMcpApiError, } from '@nexusbot/lottery-mcp-core';
+import { LOTTERY_MCP_TOOLS, McpApiError, createLotteryMcpClient, formatMcpApiError, } from 'lotterymcp-core';
 import { z } from 'zod';
 export const MCP_SERVER_TRANSPORT = 'stdio';
 export const MCP_SERVER_TOOLS = [...LOTTERY_MCP_TOOLS];

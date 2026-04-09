@@ -1,0 +1,127 @@
+[
+  {
+    "date": "2026-04-09T11:02:32.057046",
+    "predictions": [
+      {
+        "combo": "245",
+        "type": "组六",
+        "score": 0.303333,
+        "sum": 11,
+        "oddEven": "1:2",
+        "odd_even": "1:2"
+      },
+      {
+        "combo": "290",
+        "type": "组六",
+        "score": 0.303333,
+        "sum": 11,
+        "oddEven": "1:2",
+        "odd_even": "1:2"
+      },
+      {
+        "combo": "452",
+        "type": "直选",
+        "score": 0.175,
+        "hundred": 4,
+        "ten": 5,
+        "unit": 2,
+        "sum": 11,
+        "oddEven": "1:2",
+        "odd_even": "1:2"
+      },
+      {
+        "combo": "029",
+        "type": "直选",
+        "score": 0.171667,
+        "hundred": 0,
+        "ten": 2,
+        "unit": 9,
+        "sum": 11,
+        "oddEven": "1:2",
+        "odd_even": "1:2"
+      },
+      {
+        "combo": "254",
+        "type": "直选",
+        "score": 0.161667,
+        "hundred": 2,
+        "ten": 5,
+        "unit": 4,
+        "sum": 11,
+        "oddEven": "1:2",
+        "odd_even": "1:2"
+      },
+      {
+        "combo": "421",
+        "type": "直选",
+        "score": 0.155,
+        "hundred": 4,
+        "ten": 2,
+        "unit": 1,
+        "sum": 7,
+        "oddEven": "1:2",
+        "odd_even": "1:2"
+      },
+      {
+        "combo": "119",
+        "type": "组三",
+        "score": 0.136111,
+        "pairDigit": 1,
+        "singleDigit": 9,
+        "sum": 11,
+        "oddEven": "3:0",
+        "odd_even": "3:0",
+        "pair_digit": 1,
+        "single_digit": 9
+      },
+      {
+        "combo": "191",
+        "type": "组三",
+        "score": 0.136111,
+        "pairDigit": 1,
+        "singleDigit": 9,
+        "sum": 11,
+        "oddEven": "3:0",
+        "odd_even": "3:0",
+        "pair_digit": 1,
+        "single_digit": 9
+      },
+      {
+        "combo": "911",
+        "type": "组三",
+        "score": 0.136111,
+        "pairDigit": 1,
+        "singleDigit": 9,
+        "sum": 11,
+        "oddEven": "3:0",
+        "odd_even": "3:0",
+        "pair_digit": 1,
+        "single_digit": 9
+      },
+      {
+        "combo": "227",
+        "type": "组三",
+        "score": 0.13,
+        "pairDigit": 2,
+        "singleDigit": 7,
+        "sum": 11,
+        "oddEven": "1:2",
+        "odd_even": "1:2",
+        "pair_digit": 2,
+        "single_digit": 7
+      }
+    ],
+    "periodInfo": {
+      "period": "2026047",
+      "date": "2026-04-09 11:02:32",
+      "totalPeriods": 30,
+      "total_periods": 30
+    },
+    "period_info": {
+      "period": "2026047",
+      "date": "2026-04-09 11:02:32",
+      "totalPeriods": 30,
+      "total_periods": 30
+    }
+  }
+]

@@ -14,32 +14,33 @@
 ## 最快上手
 
 1. 先在 [NEUXSBOT 官网](https://www.neuxsbot.com) 注册或登录。
-2. 在个人中心获取你的 Token。
+2. 在个人中心复制你的 MCP 密钥。
 3. 本机安装 Node.js 20 或更高版本。
 4. 运行下面命令打开中文菜单：
 
 ```bash
-npx --yes neuxnbcp@latest
+npx --yes lotterymcp@latest
 ```
 
-5. 在菜单里填好接口地址、Token 和默认分析期数。
+5. 在菜单里填好接口地址、密钥和默认分析期数。
 6. 生成 MCP 配置片段。
 7. 复制到 Claude Desktop、Cursor、VS Code 或其他支持 MCP 的客户端。
 
 ## 如果你想长期使用
 
 ```bash
-npm i -g neuxnbcp
-nbcp
+npm i -g lotterymcp
+lotterymcp
 ```
 
 常用命令：
 
 ```bash
-nbcp
-nbcp init
-nbcp doctor
-nbcp serve
+lotterymcp
+lotterymcp init
+lotterymcp doctor
+lotterymcp serve
+lotterymcp analyze fc3d --periods 120
 ```
 
 ## 直接复制的 MCP 配置
@@ -49,7 +50,7 @@ nbcp serve
   "mcpServers": {
     "neuxsbot-cp": {
       "command": "npx",
-      "args": ["-y", "neuxnbcp@latest", "serve"],
+      "args": ["-y", "lotterymcp@latest", "serve"],
       "env": {
         "NEUXSBOT_API_BASE_URL": "https://www.neuxsbot.com",
         "NEUXSBOT_TOKEN": "your-real-token",
@@ -67,7 +68,7 @@ nbcp serve
 - 读取最近 150 期快乐 8，按分区、奇偶和遗漏情况做汇总。
 - 结合我最近 20 次购买记录，再分析最近 120 期开奖数据。
 
-更多示例见：[docs/prompt-templates.zh-CN.md](docs/prompt-templates.zh-CN.md)
+更多示例见：[prompt-templates.zh-CN.md](prompt-templates.zh-CN.md)
 
 ## 不接模型能不能用
 
@@ -77,5 +78,6 @@ nbcp serve
 
 ## 建议你先看这两份
 
-- [MCP 接入说明](docs/mcp-usage.zh-CN.md)
-- [分析问题示例](docs/prompt-templates.zh-CN.md)
+- [MCP 接入说明](mcp-usage.zh-CN.md)
+- [分析问题示例](prompt-templates.zh-CN.md)
+

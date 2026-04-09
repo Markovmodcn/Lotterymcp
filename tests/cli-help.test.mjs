@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict'
+﻿import assert from 'node:assert/strict'
 import { spawn, spawnSync } from 'node:child_process'
 import { mkdtempSync, readFileSync } from 'node:fs'
 import { createServer } from 'node:http'
@@ -70,8 +70,9 @@ test('cli --help exits successfully and shows readable Chinese help', () => {
   assert.equal(result.status, 0)
   assert.match(result.stdout, /使用方法:/)
   assert.match(result.stdout, /启动 MCP stdio 服务/)
+  assert.match(result.stdout, /直接运行 Python 分析程序/)
   assert.match(result.stdout, /先注册\/登录官网并获取 Token/)
-  assert.match(result.stdout, /npx --yes neuxnbcp@latest/)
+  assert.match(result.stdout, /npx --yes lotterymcp@latest/)
   assert.equal(result.stderr, '')
 })
 
@@ -95,6 +96,7 @@ test('cli without args shows the startup menu in Chinese and can exit cleanly', 
   assert.match(result.stdout, /3\.\s+生成 MCP 配置片段/)
   assert.match(result.stdout, /4\.\s+检查当前配置和网站连通性/)
   assert.match(result.stdout, /5\.\s+启动 MCP 服务/)
+  assert.match(result.stdout, /6\.\s+直接运行本地分析程序/)
   assert.match(result.stdout, /0\.\s+退出/)
   assert.match(result.stdout, /请输入数字：/)
   assert.match(result.stdout, /已退出。/)

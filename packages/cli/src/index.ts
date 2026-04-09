@@ -1,9 +1,11 @@
 ﻿#!/usr/bin/env node
 
+import path from 'node:path'
 import { readFileSync } from 'node:fs'
 import { createInterface } from 'node:readline/promises'
-import { McpApiError, createLotteryMcpClient, formatMcpApiError } from '@nexusbot/lottery-mcp-core'
-import { MCP_SERVER_TOOLS, MCP_SERVER_TRANSPORT, startNbcpStdioServer } from '@nexusbot/lottery-mcp-server'
+import { fileURLToPath } from 'node:url'
+import { McpApiError, createLotteryMcpClient, formatMcpApiError } from 'lotterymcp-core'
+import { MCP_SERVER_TOOLS, MCP_SERVER_TRANSPORT, startNbcpStdioServer } from 'lotterymcp-server'
 import {
   DEFAULT_API_BASE_URL,
   DEFAULT_PERIODS,
@@ -15,10 +17,12 @@ import {
   type NbcpConfig,
 } from './config.js'
 import { renderNbcpBanner, shouldShowBanner } from './banner.js'
+import { PYTHON_PROGRAMS, getPythonProgramById, runPythonAnalysisProgram } from './python-runtime.js'
 
 const WEBSITE_URL = 'https://www.neuxsbot.com'
 const MEMBER_CENTER_URL = 'https://www.neuxsbot.com/member'
 const TOKEN_PAGE_URL = 'https://www.neuxsbot.com/member/api-keys'
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..')
 
 const MENU_TEXT = `请选择操作：
   1. 注册/登录并获取 Token
@@ -26,25 +30,32 @@ const MENU_TEXT = `请选择操作：
   3. 生成 MCP 配置片段
   4. 检查当前配置和网站连通性
   5. 启动 MCP 服务
+  6. 直接运行本地分析程序
   0. 退出`
 
 const HELP_TEXT = `临时打开菜单:
-  npx --yes neuxnbcp@latest
+  npx --yes lotterymcp@latest
 
 全局安装:
-  npm i -g neuxnbcp
+  npm i -g lotterymcp
 
 使用方法:
   1. 先注册/登录官网并获取 Token
   2. 再配置 API_BASE_URL / TOKEN / DEFAULT_PERIODS
   3. 复制 MCP 配置片段到支持 MCP 的 AI 工具
   4. 在 AI 对话里动态选择彩种和期数
+  5. 如需本地直接分析，可运行 Python 分析程序
 
 可用命令:
-  serve   启动 MCP stdio 服务
-  init    生成本地配置文件
-  doctor  检查当前配置和网站连通性
-  login   打开官网账号页并获取 Token
+  serve            启动 MCP stdio 服务
+  init             生成本地配置文件
+  doctor           检查当前配置和网站连通性
+  login            打开官网账号页并获取 Token
+  analyze          直接运行 Python 分析程序
+
+说明:
+  analyze 命令会自动准备本地 Python 运行环境。
+  如果当前系统没有 Python，Windows 下会尝试自动安装并初始化依赖。
 
 当前版本:
   官网: www.neuxsbot.com
@@ -69,6 +80,24 @@ const renderConfigSummary = (config: Partial<NbcpConfig>) => `当前配置:
   TOKEN: ${maskToken(config.token || '')}
   DEFAULT_PERIODS: ${config.defaultPeriods || '(未设置)'}
 `
+
+const renderPythonProgramMenu = () => {
+  const rows = PYTHON_PROGRAMS.map((program, index) => `  ${index + 1}. ${program.label} (${program.id})`)
+  return `请选择本地分析程序：
+${rows.join('\n')}
+  0. 返回上级`
+}
+
+const renderAnalyzeUsage = () => {
+  const rows = PYTHON_PROGRAMS.map((program) => `  ${program.id.padEnd(4, ' ')} ${program.label}`)
+  return `可用分析程序:
+${rows.join('\n')}
+
+示例:
+  npx --yes lotterymcp@latest analyze fc3d --periods 120
+  npx --yes lotterymcp@latest analyze ssq --periods 150
+`
+}
 
 const isPositiveInteger = (value: string) => /^\d+$/.test(value.trim())
 
@@ -130,7 +159,9 @@ const promptForConfig = async () => {
     const apiBaseUrlInput = (
       await rl.question(`接口地址 [${currentConfig.apiBaseUrl || DEFAULT_API_BASE_URL}]: `)
     ).trim()
-    const tokenInput = (await rl.question(`Token [${currentConfig.token ? maskToken(currentConfig.token) : '必填'}]: `)).trim()
+    const tokenInput = (
+      await rl.question(`Token [${currentConfig.token ? maskToken(currentConfig.token) : '必填'}]: `)
+    ).trim()
     const defaultPeriodsInput = (
       await rl.question(`默认期数 [${currentConfig.defaultPeriods || DEFAULT_PERIODS}]: `)
     ).trim()
@@ -196,7 +227,11 @@ const runDoctor = async () => {
     return 0
   } catch (error) {
     const message =
-      error instanceof McpApiError ? formatMcpApiError(error) : (error instanceof Error ? error.message : String(error))
+      error instanceof McpApiError
+        ? formatMcpApiError(error)
+        : error instanceof Error
+          ? error.message
+          : String(error)
     console.error(`网站接口异常: ${message}`)
     return 1
   }
@@ -217,10 +252,168 @@ const runServe = async () => {
     return 0
   } catch (error) {
     const message =
-      error instanceof McpApiError ? formatMcpApiError(error) : (error instanceof Error ? error.message : String(error))
+      error instanceof McpApiError
+        ? formatMcpApiError(error)
+        : error instanceof Error
+          ? error.message
+          : String(error)
     console.error(`MCP 服务启动失败: ${message}`)
     return 1
   }
+}
+
+const runSelectedPythonProgram = async (
+  programId: string,
+  overrides: {
+    periods?: string
+    outputPath?: string
+  } = {},
+) => {
+  const config = await resolveConfig()
+  const resolvedConfig = buildNextConfig(config, {})
+  const program = getPythonProgramById(programId)
+  const periods = String(overrides.periods || resolvedConfig.defaultPeriods || DEFAULT_PERIODS).trim()
+
+  if (!program) {
+    console.error(`未识别的分析程序: ${programId}`)
+    console.log(renderAnalyzeUsage())
+    return 1
+  }
+
+  if (!isPositiveInteger(periods)) {
+    console.error('分析期数必须是正整数。')
+    return 1
+  }
+
+  console.log(`准备运行: ${program.label}`)
+  console.log(`接口地址: ${resolvedConfig.apiBaseUrl}`)
+  console.log(`分析期数: ${periods}`)
+  if (!resolvedConfig.token.trim()) {
+    console.log('当前未配置 Token，将按当前网站公开能力尝试访问数据。')
+  }
+  console.log('')
+
+  try {
+    await runPythonAnalysisProgram(program.id, {
+      apiBaseUrl: resolvedConfig.apiBaseUrl,
+      token: resolvedConfig.token,
+      periods,
+      outputPath: overrides.outputPath,
+      repoRoot: REPO_ROOT,
+      onStatus: (message) => console.log(message),
+    })
+    console.log(`\n${program.label} 运行完成。`)
+    return 0
+  } catch (error) {
+    console.error(error instanceof Error ? error.message : String(error))
+    return 1
+  }
+}
+
+const runPythonProgramMenu = async () => {
+  console.log('本地分析程序会自动准备 Python 运行环境。')
+  console.log('如果当前系统没有 Python，Windows 下会尝试自动安装并初始化依赖。\n')
+  console.log(renderPythonProgramMenu())
+
+  if (!canShowInteractiveMenu()) {
+    console.log('\n当前为非交互环境，请使用 `lotterymcp analyze <programId> --periods 120`。')
+    console.log(renderAnalyzeUsage())
+    return 0
+  }
+
+  const currentConfig = await resolveConfig()
+  const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  })
+
+  try {
+    const selection = (await rl.question('\n请输入数字：')).trim()
+    console.log('')
+
+    if (selection === '0') {
+      console.log('已返回。')
+      return 0
+    }
+
+    const program = /^\d+$/.test(selection) ? PYTHON_PROGRAMS[Number(selection) - 1] : undefined
+    if (!program) {
+      console.error(`无效选择: ${selection || '(空)'}`)
+      return 1
+    }
+
+    const periodsInput = (
+      await rl.question(`分析期数 [${currentConfig.defaultPeriods || DEFAULT_PERIODS}]: `)
+    ).trim()
+
+    return runSelectedPythonProgram(program.id, {
+      periods: periodsInput || currentConfig.defaultPeriods || DEFAULT_PERIODS,
+    })
+  } finally {
+    rl.close()
+  }
+}
+
+const parseAnalyzeArgs = (argv: string[]) => {
+  const parsed: {
+    programId?: string
+    periods?: string
+    outputPath?: string
+  } = {}
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index]
+    if (!arg) {
+      continue
+    }
+
+    if (!arg.startsWith('--') && !parsed.programId) {
+      parsed.programId = arg
+      continue
+    }
+
+    if (arg === '--periods' || arg === '-p') {
+      parsed.periods = argv[index + 1]
+      index += 1
+      continue
+    }
+
+    if (arg === '--output' || arg === '-o') {
+      parsed.outputPath = argv[index + 1]
+      index += 1
+      continue
+    }
+
+    throw new Error(`未知参数: ${arg}`)
+  }
+
+  return parsed
+}
+
+const runAnalyzeCommand = async (argv: string[]) => {
+  let parsed: ReturnType<typeof parseAnalyzeArgs>
+
+  try {
+    parsed = parseAnalyzeArgs(argv)
+  } catch (error) {
+    console.error(error instanceof Error ? error.message : String(error))
+    console.log(renderAnalyzeUsage())
+    return 1
+  }
+
+  if (!parsed.programId) {
+    if (canShowInteractiveMenu()) {
+      return runPythonProgramMenu()
+    }
+
+    console.log(renderAnalyzeUsage())
+    return 0
+  }
+
+  return runSelectedPythonProgram(parsed.programId, {
+    periods: parsed.periods,
+    outputPath: parsed.outputPath,
+  })
 }
 
 const runStartupMenu = async () => {
@@ -252,6 +445,8 @@ const runStartupMenu = async () => {
         return runDoctor()
       case '5':
         return runServe()
+      case '6':
+        return runPythonProgramMenu()
       case '0':
         console.log('已退出。')
         return 0
@@ -298,6 +493,10 @@ const main = async () => {
     return 0
   }
 
+  if (command === 'analyze') {
+    return runAnalyzeCommand(args.slice(1))
+  }
+
   console.error(`未知命令: ${command}`)
   console.log(HELP_TEXT)
   return 1
@@ -310,3 +509,4 @@ try {
   console.error(error instanceof Error ? error.message : String(error))
   process.exitCode = 1
 }
+

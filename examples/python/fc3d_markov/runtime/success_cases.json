@@ -1,0 +1,23 @@
+{
+  "analysisDate": "2026-04-09T11:02:30.109077",
+  "totalPeriods": 30,
+  "successCases": [],
+  "analysisResults": {
+    "totalCases": 0,
+    "bestHistoryLength": null,
+    "typeDistribution": {},
+    "rankDistribution": {},
+    "sumDistribution": {},
+    "digitDistribution": {},
+    "averageRank": 0,
+    "total_cases": 0,
+    "best_history_length": null,
+    "type_distribution": {},
+    "rank_distribution": {},
+    "sum_distribution": {},
+    "digit_distribution": {},
+    "average_rank": 0,
+    "successRateByHistory": {},
+    "success_rate_by_history": {}
+  }
+}

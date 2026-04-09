@@ -1,6 +1,6 @@
 {
-  "name": "@nexusbot/lottery-mcp-server",
-  "version": "0.1.4",
+  "name": "lotterymcp-server",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "description": "Lotterymcp stdio server for the NEUXSBOT lottery service",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.22.0",
-    "@nexusbot/lottery-mcp-core": "0.1.4",
+    "lotterymcp-core": "0.1.0",
     "zod": "^3.24.1"
   },
   "engines": {

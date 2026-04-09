@@ -6,7 +6,7 @@
 
 1. 注册或登录 [NEUXSBOT 官网](https://www.neuxsbot.com)。
 2. 进入 [个人中心](https://www.neuxsbot.com/member) 确认账号状态。
-3. 获取你的 MCP Token。
+3. 在个人中心复制你的 MCP 密钥。
 4. 确认本机已经安装 Node.js 20 或更高版本。
 
 ## 适合接入到哪些工具
@@ -30,23 +30,23 @@
 启动菜单：
 
 ```bash
-npx --yes neuxnbcp@latest
+npx --yes lotterymcp@latest
 ```
 
 或者：
 
 ```bash
-nbcp
+lotterymcp
 ```
 
 菜单里主要做 4 件事：
 
-1. 查看 Token 获取入口。
-2. 保存接口地址、Token、默认分析期数。
+1. 查看密钥获取入口。
+2. 保存接口地址、密钥、默认分析期数。
 3. 生成 MCP 配置片段。
 4. 检查当前配置和接口连通性。
 
-正常顺序就是先拿 Token，再保存配置，再生成配置片段，最后贴进 AI 工具。
+正常顺序就是先拿密钥，再保存配置，再生成配置片段，最后贴进 AI 工具。
 
 ## 方式二：直接写 MCP 配置
 
@@ -57,7 +57,7 @@ nbcp
   "mcpServers": {
     "neuxsbot-cp": {
       "command": "npx",
-      "args": ["-y", "neuxnbcp@latest", "serve"],
+      "args": ["-y", "lotterymcp@latest", "serve"],
       "env": {
         "NEUXSBOT_API_BASE_URL": "https://www.neuxsbot.com",
         "NEUXSBOT_TOKEN": "your-real-token",
@@ -74,7 +74,7 @@ nbcp
 {
   "mcpServers": {
     "neuxsbot-cp": {
-      "command": "nbcp",
+      "command": "lotterymcp",
       "args": ["serve"],
       "env": {
         "NEUXSBOT_API_BASE_URL": "https://www.neuxsbot.com",
@@ -89,7 +89,7 @@ nbcp
 ## 环境变量说明
 
 - `NEUXSBOT_API_BASE_URL`：接口基地址，默认使用 `https://www.neuxsbot.com`
-- `NEUXSBOT_TOKEN`：网站账号对应的真实 Token，必须填写
+- `NEUXSBOT_TOKEN`：网站账号对应的真实密钥，必须填写
 - `NEUXSBOT_DEFAULT_PERIODS`：默认分析期数，AI 对话里仍然可以临时覆盖
 - `NBCP_CONFIG_PATH`：可选，本地配置文件路径
 
@@ -109,17 +109,17 @@ nbcp
 真实使用流程是这样的：
 
 1. 网站提供历史开奖数据接口。
-2. 网站账号体系负责 Token 和权限状态。
+2. 网站账号体系负责密钥和权限状态。
 3. 本地 MCP 通过 `stdio` 把数据能力接进 AI 工具。
 4. AI 在对话里动态选择彩种、期数和分析方向。
 
-所以官网、账号状态和 Token 不是额外步骤，而是整个使用链路的一部分。
+所以官网、账号状态和 MCP 密钥不是额外步骤，而是整个使用链路的一部分。
 
 ## 常见问题
 
 ### 1. 返回 401 或 403
 
-通常是 Token 无效、已撤销，或当前账号没有对应权限。先回网站检查账号状态，再重新获取 Token。
+通常是密钥无效、已撤销，或当前账号没有对应权限。先回网站检查账号状态，再重新获取密钥。
 
 ### 2. 返回 429
 
@@ -131,7 +131,7 @@ nbcp
 
 - 当前客户端真的支持 MCP `stdio`
 - MCP 配置已经保存成功
-- 启动命令还是 `neuxnbcp@latest serve` 或 `nbcp serve`
+- 启动命令还是 `lotterymcp@latest serve` 或 `lotterymcp serve`
 
 ### 4. 不接模型能不能用
 
@@ -139,8 +139,8 @@ nbcp
 
 ## 建议排查顺序
 
-1. 运行 `nbcp doctor`
+1. 运行 `lotterymcp doctor`
 2. 检查 `NEUXSBOT_API_BASE_URL` 是否仍为 `https://www.neuxsbot.com`
-3. 检查 Token 是否复制完整
+3. 检查密钥是否复制完整
 4. 检查网站账号状态是否正常
 5. 再确认 AI 工具是否已经真正加载 MCP 配置

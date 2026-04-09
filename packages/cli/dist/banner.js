@@ -1,13 +1,84 @@
-const LOGO_LINES = [
-    'NN   NN EEEEEEE U     U XX   XX  SSSSS  BBBBB    OOOOO  TTTTTTT',
-    'NNN  NN EE      U     U  XX XX  SS      BB   B  OO   OO   TTT  ',
-    'NN N NN EEEEE   U     U   XXX    SSSSS  BBBBB   OO   OO   TTT  ',
-    'NN  NNN EE      U     U  XX XX       SS BB   B  OO   OO   TTT  ',
-    'NN   NN EEEEEEE  UUUUU  XX   XX  SSSSS  BBBBB    OOOOO    TTT  ',
-];
-const SUBTITLE_LINE = 'Lotterymcp ???';
+const GLYPHS = {
+    N: [
+        '███╗   ██╗',
+        '████╗  ██║',
+        '██╔██╗ ██║',
+        '██║╚██╗██║',
+        '██║ ╚████║',
+        '╚═╝  ╚═══╝',
+    ],
+    E: [
+        '███████╗',
+        '██╔════╝',
+        '█████╗  ',
+        '██╔══╝  ',
+        '███████╗',
+        '╚══════╝',
+    ],
+    U: [
+        '██╗   ██╗',
+        '██║   ██║',
+        '██║   ██║',
+        '██║   ██║',
+        '╚██████╔╝',
+        ' ╚═════╝ ',
+    ],
+    X: [
+        '██╗  ██╗',
+        '╚██╗██╔╝',
+        ' ╚███╔╝ ',
+        ' ██╔██╗ ',
+        '██╔╝╚██╗',
+        '╚═╝  ╚═╝',
+    ],
+    S: [
+        '███████╗',
+        '██╔════╝',
+        '███████╗',
+        '╚════██║',
+        '███████║',
+        '╚══════╝',
+    ],
+    B: [
+        '██████╗ ',
+        '██╔══██╗',
+        '██████╔╝',
+        '██╔══██╗',
+        '██████╔╝',
+        '╚═════╝ ',
+    ],
+    O: [
+        ' ██████╗ ',
+        '██╔═══██╗',
+        '██║   ██║',
+        '██║   ██║',
+        '╚██████╔╝',
+        ' ╚═════╝ ',
+    ],
+    T: [
+        '████████╗',
+        '╚══██╔══╝',
+        '   ██║   ',
+        '   ██║   ',
+        '   ██║   ',
+        '   ╚═╝   ',
+    ],
+};
+const WORD = 'NEUXSBOT';
+const SUBTITLE_LINE = 'NEUXSBOT 彩票分析命令行';
 const WEBSITE_LINE = 'www.neuxsbot.com';
-const shadowify = (value) => value.replace(/[^\s]/g, '.');
+const buildWordmarkLines = () => {
+    const rows = Array.from({ length: 6 }, () => '');
+    for (const character of WORD) {
+        const glyph = GLYPHS[character];
+        for (let index = 0; index < rows.length; index += 1) {
+            rows[index] += `${glyph[index]}  `;
+        }
+    }
+    return rows.map((line) => line.trimEnd());
+};
+const WORDMARK_LINES = buildWordmarkLines();
+const shadowify = (value) => value.replace(/[^\s]/g, '░');
 const centerText = (value, width) => {
     const padding = Math.max(0, Math.floor((width - value.length) / 2));
     return `${' '.repeat(padding)}${value}`;
@@ -25,9 +96,9 @@ export const shouldShowBanner = (command, stream = process.stdout) => {
     return Boolean(stream.isTTY);
 };
 export const renderNbcpBanner = (_stream = process.stdout) => {
-    const maxWidth = Math.max(...LOGO_LINES.map((line) => line.length), SUBTITLE_LINE.length, WEBSITE_LINE.length);
-    const renderedLines = LOGO_LINES.flatMap((line) => [
-        `  ${shadowify(line)}`,
+    const maxWidth = Math.max(...WORDMARK_LINES.map((line) => line.length), SUBTITLE_LINE.length, WEBSITE_LINE.length);
+    const renderedLines = WORDMARK_LINES.flatMap((line) => [
+        ` ${shadowify(line)}`,
         line,
     ]);
     return [

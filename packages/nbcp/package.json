@@ -1,0 +1,31 @@
+{
+  "name": "lotterymcp",
+  "version": "0.1.2",
+  "private": false,
+  "type": "module",
+  "description": "Short command wrapper for the Lotterymcp CLI",
+  "license": "MIT",
+  "bin": {
+    "lotterymcp": "bin/nbcp.js"
+  },
+  "files": [
+    "bin",
+    "README.md"
+  ],
+  "dependencies": {
+    "neuxnbcp": "^0.1.6"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "lottery",
+    "neuxsbot",
+    "lotterymcp"
+  ],
+  "homepage": "https://www.neuxsbot.com",
+  "publishConfig": {
+    "access": "public"
+  }
+}

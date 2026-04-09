@@ -59,8 +59,8 @@ Windows 用户也可以直接运行对应目录下的 `run.bat`。
 ## 注意事项
 
 - 这些脚本会联网访问 `https://www.neuxsbot.com/api/v1/mcp/lottery/*`
-- 部分接口需要有效 Token 才能读取完整数据
+- 部分接口需要有效密钥才能读取完整数据
 - 如果出现 `HTTP 429`，通常表示请求频率过高或账号额度触发限制
 - 这些脚本属于本地分析程序，不是正式的 AI 对话入口
 
-如果你要接入 Claude Desktop、Cursor、VS Code 等 AI 工具，请改用仓库里的 `nbcp` / MCP 接入方式。
+如果你要接入 Claude Desktop、Cursor、VS Code 等 AI 工具，请改用仓库里的 `lotterymcp` / MCP 接入方式。

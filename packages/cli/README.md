@@ -1,6 +1,8 @@
 ﻿# Lotterymcp CLI
 
-`neuxnbcp` 是 Lotterymcp 的命令行入口包。
+`neuxnbcp` 是 Lotterymcp 的实际 CLI 实现包。
+
+普通用户直接使用对外短命令包 `lotterymcp` 即可。
 
 它负责两件事：
 
@@ -12,37 +14,39 @@
 临时运行：
 
 ```bash
-npx --yes neuxnbcp@latest
+npx --yes lotterymcp@latest
 ```
 
 全局安装：
 
 ```bash
-npm i -g neuxnbcp
-nbcp
+npm i -g lotterymcp
+lotterymcp
 ```
 
 ## 常用命令
 
 ```bash
-nbcp
-nbcp init
-nbcp doctor
-nbcp login
-nbcp serve
+lotterymcp
+lotterymcp init
+lotterymcp doctor
+lotterymcp login
+lotterymcp serve
+lotterymcp analyze fc3d --periods 120
 ```
 
-- `nbcp`：打开中文菜单
-- `nbcp init`：保存接口地址、Token 和默认分析期数
-- `nbcp doctor`：检查当前配置和接口连通性
-- `nbcp login`：输出官网和账号入口
-- `nbcp serve`：启动 MCP `stdio` 服务
+- `lotterymcp`：打开中文菜单
+- `lotterymcp init`：保存接口地址、密钥和默认分析期数
+- `lotterymcp doctor`：检查当前配置和接口连通性
+- `lotterymcp login`：输出官网和账号入口
+- `lotterymcp serve`：启动 MCP `stdio` 服务
+- `lotterymcp analyze`：直接运行本地分析程序
 
 ## 使用前准备
 
 1. 打开 [https://www.neuxsbot.com](https://www.neuxsbot.com)
 2. 注册或登录账号
-3. 在个人中心获取你的 Token
+3. 在个人中心复制你的 MCP 密钥
 
 ## MCP 配置示例
 
@@ -51,7 +55,7 @@ nbcp serve
   "mcpServers": {
     "neuxsbot-cp": {
       "command": "npx",
-      "args": ["-y", "neuxnbcp@latest", "serve"],
+      "args": ["-y", "lotterymcp@latest", "serve"],
       "env": {
         "NEUXSBOT_API_BASE_URL": "https://www.neuxsbot.com",
         "NEUXSBOT_TOKEN": "your-real-token",
@@ -65,6 +69,6 @@ nbcp serve
 ## 说明
 
 - 彩种和期数不需要在本地写死，可以在 AI 对话中动态指定
-- Token、调用次数和权限状态由网站账号体系控制
+- 密钥、调用次数和权限状态由网站账号体系控制
 - 这个 npm 包只公开命令行接入层和本地 MCP 代理能力
 - 完整使用说明请以仓库首页文档为准

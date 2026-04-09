@@ -1,6 +1,6 @@
 {
   "name": "neuxnbcp",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "private": false,
   "type": "module",
   "description": "Lotterymcp command line entrypoint for the NEUXSBOT lottery service",
@@ -20,8 +20,8 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "@nexusbot/lottery-mcp-core": "0.1.4",
-    "@nexusbot/lottery-mcp-server": "0.1.4"
+    "lotterymcp-core": "0.1.0",
+    "lotterymcp-server": "0.1.0"
   },
   "engines": {
     "node": ">=20"

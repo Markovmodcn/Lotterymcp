@@ -7,7 +7,7 @@ import {
   createLotteryMcpClient,
   formatMcpApiError,
   type LotteryMcpClientConfig,
-} from '@nexusbot/lottery-mcp-core'
+} from 'lotterymcp-core'
 import { z } from 'zod'
 
 export const MCP_SERVER_TRANSPORT = 'stdio'

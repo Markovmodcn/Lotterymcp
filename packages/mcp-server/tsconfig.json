@@ -5,7 +5,7 @@
     "moduleResolution": "NodeNext",
     "baseUrl": ".",
     "paths": {
-      "@nexusbot/lottery-mcp-core": [
+      "lotterymcp-core": [
         "../core/src/index.ts"
       ]
     },
