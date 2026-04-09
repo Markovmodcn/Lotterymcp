@@ -23,6 +23,8 @@ Lotterymcp 是一个面向 MCP 客户端的开奖数据接入工具。
 - 结合你自己的购买记录一起分析，不需要手工整理开奖数据
 - 不接大模型时，也可以直接跑仓库里的 Python 分析程序
 
+> 覆盖自历史首期至最新一期的完整准确数据，适合直接接入 AI 对话进行分析。
+
 ## 三步开始
 
 1. 在 [NEUXSBOT 官网](https://www.neuxsbot.com) 注册或登录，并在 [个人中心](https://www.neuxsbot.com/member) 复制你的 MCP 密钥。
