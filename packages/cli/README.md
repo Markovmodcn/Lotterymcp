@@ -1,18 +1,15 @@
-# Lotterymcp
+﻿# Lotterymcp CLI
 
-`neuxnbcp` 是面向 NEUXSBOT 彩票数据服务的公开 MCP 命令行入口包。
+`neuxnbcp` 是 Lotterymcp 的命令行入口包。
 
-它提供两种用法：
+它负责两件事：
 
-- 直接运行中文初始化菜单
-- 作为 MCP `stdio` 服务接入 Claude Desktop、Cursor、VS Code 或其他支持 MCP 的工具
+- 提供中文菜单，帮助用户完成本地配置
+- 以 MCP `stdio` 服务形式接入支持 MCP 的 AI 工具
 
-如果你只是临时试用，直接跑 `npx --yes neuxnbcp@latest`。
-如果你准备长期使用，安装后直接运行 `nbcp`。
+## 安装
 
-## 快速开始
-
-直接运行：
+临时运行：
 
 ```bash
 npx --yes neuxnbcp@latest
@@ -25,14 +22,6 @@ npm i -g neuxnbcp
 nbcp
 ```
 
-## 你需要先准备
-
-1. 打开 [https://www.neuxsbot.com](https://www.neuxsbot.com)
-2. 注册或登录
-3. 打开官网账号页 [https://www.neuxsbot.com/member](https://www.neuxsbot.com/member)
-4. 在密钥页获取 MCP Token：
-   [https://www.neuxsbot.com/member/api-keys](https://www.neuxsbot.com/member/api-keys)
-
 ## 常用命令
 
 ```bash
@@ -43,16 +32,17 @@ nbcp login
 nbcp serve
 ```
 
-- `nbcp`: 打开中文菜单
-- `nbcp init`: 保存接口地址、Token、默认期数
-- `nbcp doctor`: 检查当前配置和网站连通性
-- `nbcp login`: 输出官网、账号页和密钥页链接
-- `nbcp serve`: 启动真正的 MCP `stdio` 服务
+- `nbcp`：打开中文菜单
+- `nbcp init`：保存接口地址、Token 和默认分析期数
+- `nbcp doctor`：检查当前配置和接口连通性
+- `nbcp login`：输出官网和账号入口
+- `nbcp serve`：启动 MCP `stdio` 服务
 
-## 连通性提示
+## 使用前准备
 
-- `nbcp doctor` 会直接请求网站健康接口，验证当前 API 地址、Token 和工具列表是否可用。
-- 如果命令行提示 `HTTP 429`，说明当前 Token 配额或请求频率触发限制。先降低默认期数、减少连续请求，再回官网账号页检查当前状态。
+1. 打开 [https://www.neuxsbot.com](https://www.neuxsbot.com)
+2. 注册或登录账号
+3. 在个人中心获取你的 Token
 
 ## MCP 配置示例
 
@@ -74,7 +64,7 @@ nbcp serve
 
 ## 说明
 
-- 彩种不在本地写死，由 AI 对话动态传入
-- Token 权限、调用次数、账号状态由 NEUXSBOT 网站控制
-- 这个 npm 包只公开客户端和 MCP 代理层，不包含网站后端和数据采集系统
-- 完整示例、Python 本地分析程序和 AI 提示词模板请以 GitHub 仓库主页说明为准
+- 彩种和期数不需要在本地写死，可以在 AI 对话中动态指定
+- Token、调用次数和权限状态由网站账号体系控制
+- 这个 npm 包只公开命令行接入层和本地 MCP 代理能力
+- 完整使用说明请以仓库首页文档为准

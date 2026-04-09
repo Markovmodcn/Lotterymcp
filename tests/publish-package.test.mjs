@@ -35,3 +35,26 @@ test('publishable packages expose registry metadata and cli package includes a R
   assert.equal(serverPackage.publishConfig?.access, 'public')
   assert.equal(existsSync(cliReadmePath), true)
 })
+
+test('public docs stay product-facing and do not expose internal conversation wording', () => {
+  const readme = readFileSync(path.join(repoRoot, 'README.md'), 'utf8')
+  const usageDoc = readFileSync(path.join(repoRoot, 'docs', 'mcp-usage.zh-CN.md'), 'utf8')
+  const promptDoc = readFileSync(
+    path.join(repoRoot, 'docs', 'prompt-templates.zh-CN.md'),
+    'utf8',
+  )
+
+  assert.match(readme, /分析问题示例/)
+  assert.doesNotMatch(readme, /AI 提示词模板/)
+  assert.doesNotMatch(readme, /packages\/cli/)
+  assert.doesNotMatch(readme, /packages\/core/)
+  assert.doesNotMatch(readme, /packages\/mcp-server/)
+  assert.doesNotMatch(readme, /\?{3,}/)
+
+  assert.match(usageDoc, /MCP 接入说明/)
+  assert.doesNotMatch(usageDoc, /\?{3,}/)
+
+  assert.match(promptDoc, /分析问题示例/)
+  assert.doesNotMatch(promptDoc, /提示词模板/)
+  assert.doesNotMatch(promptDoc, /\?{3,}/)
+})
