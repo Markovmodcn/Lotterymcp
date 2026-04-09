@@ -1,6 +1,6 @@
 {
   "name": "lotterymcp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "type": "module",
   "description": "Short command wrapper for the Lotterymcp CLI",
@@ -13,7 +13,7 @@
     "README.md"
   ],
   "dependencies": {
-    "neuxnbcp": "^0.1.6"
+    "neuxnbcp": "^0.1.7"
   },
   "engines": {
     "node": ">=20"
