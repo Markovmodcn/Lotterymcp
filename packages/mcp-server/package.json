@@ -1,0 +1,34 @@
+{
+  "name": "@nexusbot/lottery-mcp-server",
+  "version": "0.1.4",
+  "private": false,
+  "type": "module",
+  "description": "Lotterymcp stdio server for the NEUXSBOT lottery service",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.22.0",
+    "@nexusbot/lottery-mcp-core": "0.1.4",
+    "zod": "^3.24.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "lottery",
+    "neuxsbot",
+    "server"
+  ],
+  "homepage": "https://www.neuxsbot.com",
+  "publishConfig": {
+    "access": "public"
+  }
+}

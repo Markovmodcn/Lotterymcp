@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "paths": {
+      "@nexusbot/lottery-mcp-core": [
+        "../core/src/index.ts"
+      ],
+      "@nexusbot/lottery-mcp-server": [
+        "../mcp-server/src/index.ts"
+      ]
+    },
+    "strict": true,
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "composite": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ES2022"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../mcp-server"
+    }
+  ]
+}

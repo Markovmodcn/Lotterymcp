@@ -1,0 +1,29 @@
+{
+  "name": "@nexusbot/lottery-mcp-core",
+  "version": "0.1.4",
+  "private": false,
+  "type": "module",
+  "description": "Core REST client for the Lotterymcp lottery service",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "lottery",
+    "neuxsbot",
+    "client"
+  ],
+  "homepage": "https://www.neuxsbot.com",
+  "publishConfig": {
+    "access": "public"
+  }
+}

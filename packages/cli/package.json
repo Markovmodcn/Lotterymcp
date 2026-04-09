@@ -1,0 +1,40 @@
+{
+  "name": "neuxnbcp",
+  "version": "0.1.4",
+  "private": false,
+  "type": "module",
+  "description": "Lotterymcp command line entrypoint for the NEUXSBOT lottery service",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "bin": {
+    "neuxnbcp": "dist/index.js",
+    "nbcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@nexusbot/lottery-mcp-core": "0.1.4",
+    "@nexusbot/lottery-mcp-server": "0.1.4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "cli",
+    "lottery",
+    "neuxsbot",
+    "nbcp"
+  ],
+  "homepage": "https://www.neuxsbot.com",
+  "publishConfig": {
+    "access": "public"
+  }
+}

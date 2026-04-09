@@ -1,0 +1,25 @@
+{
+  "name": "nexusbot-lottery-mcp",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Lotterymcp monorepo for the NEUXSBOT lottery service",
+  "license": "MIT",
+  "packageManager": "npm@11.11.0",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "tsc -b packages/core packages/mcp-server packages/cli",
+    "dev": "npm run build && node packages/cli/dist/index.js --help",
+    "test": "python -m unittest discover tests/python && npm run build && node --test tests/cli-help.test.mjs tests/core-client.test.mjs tests/mcp-server.test.mjs tests/publish-package.test.mjs",
+    "pack:win": "node -e \"console.log('pack:win is reserved for Task 8 portable packaging.')\""
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.3"
+  }
+}

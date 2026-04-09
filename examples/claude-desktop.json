@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "neuxsbot-cp": {
+      "command": "npx",
+      "args": ["-y", "neuxnbcp@latest", "serve"],
+      "env": {
+        "NEUXSBOT_API_BASE_URL": "https://www.neuxsbot.com",
+        "NEUXSBOT_TOKEN": "your-real-token",
+        "NEUXSBOT_DEFAULT_PERIODS": "100"
+      }
+    }
+  }
+}
