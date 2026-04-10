@@ -13,6 +13,7 @@ test('banner uses the new block wordmark instead of the old ASCII letters', asyn
   const output = renderNbcpBanner()
 
   assert.match(output, /█{2,}/)
-  assert.match(output, /NEUXSBOT 彩票分析命令行/)
+  assert.match(output, /Lotterymcp 中文命令行入口/)
+  assert.match(output, /www\.neuxsbot\.com/)
   assert.doesNotMatch(output, /NN   NN EEEEEEE/)
 })
