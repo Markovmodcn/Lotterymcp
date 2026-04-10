@@ -1,39 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1062" viewBox="0 0 1600 1062" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="798" viewBox="0 0 1600 798" fill="none">
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#09111b" />
-<stop offset="100%" stop-color="#111b29" />
-</linearGradient>
-<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#0f1723" />
-<stop offset="100%" stop-color="#111827" />
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0b0b0d" />
+<stop offset="100%" stop-color="#141519" />
 </linearGradient>
 </defs>
-<rect width="1600" height="100%" fill="url(#bg)" />
-<rect x="44" y="40" width="1512" height="982" rx="28" fill="url(#panel)" stroke="#223147" stroke-width="2"/>
-<rect x="44" y="40" width="1512" height="74" rx="28" fill="#0b1220" />
-<circle cx="92" cy="77" r="10" fill="#ff5f57" />
-<circle cx="124" cy="77" r="10" fill="#febc2e" />
-<circle cx="156" cy="77" r="10" fill="#28c840" />
-<text x="220" y="87" fill="#e6edf3" font-size="30" font-family="Consolas, Monaco, 'Courier New', monospace">Lotterymcp CLI</text>
-<rect x="1260" y="56" width="228" height="40" rx="20" fill="#17314c" stroke="#2d4b69"/>
-<text x="1374" y="82" text-anchor="middle" fill="#8bc5ff" font-size="22" font-family="Consolas, Monaco, 'Courier New', monospace">真实命令输出</text>
-<text x="88" y="154" fill="#7ee787" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">$ npx --yes lotterymcp@latest --help</text>
-<text x="88" y="184" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">临时打开菜单:</text>
-<text x="88" y="226" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  npx --yes lotterymcp@latest</text>
-<text x="88" y="268" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace"></text>
-<text x="88" y="310" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">全局安装:</text>
-<text x="88" y="352" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  npm i -g lotterymcp</text>
-<text x="88" y="394" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace"></text>
-<text x="88" y="436" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">可用命令:</text>
-<text x="88" y="478" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  serve            启动 MCP stdio 服务</text>
-<text x="88" y="520" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  init             生成本地配置文件</text>
-<text x="88" y="562" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  doctor           检查当前配置和网站连通性</text>
-<text x="88" y="604" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  login            打开官网账号页并获取 Token</text>
-<text x="88" y="646" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  analyze          直接运行 Python 分析程序</text>
-<text x="88" y="688" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace"></text>
-<text x="88" y="730" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">官网: www.neuxsbot.com</text>
-<text x="88" y="772" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">传输方式: stdio</text>
-<text x="88" y="814" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">彩种: 由 AI 对话动态传入，不写死在本地配置</text>
-<text x="88" y="1028" fill="#5f728c" font-size="22" font-family="Consolas, Monaco, 'Courier New', monospace">NEUXSBOT • www.neuxsbot.com</text>
+<rect width="1600" height="798" fill="#050505" />
+<rect x="42" y="36" width="1516" height="726" rx="22" fill="url(#bg)" stroke="#2d3139" stroke-width="2" />
+<rect x="42" y="36" width="1516" height="92" rx="22" fill="#111216" />
+<circle cx="92" cy="82" r="9" fill="#ff5f57" />
+<circle cx="122" cy="82" r="9" fill="#febc2e" />
+<circle cx="152" cy="82" r="9" fill="#28c840" />
+<text x="204" y="92" fill="#f3f5f7" font-size="31" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">Lotterymcp 中文菜单</text>
+<rect x="1250" y="58" width="238" height="44" rx="22" fill="#181d24" stroke="#2d3742" />
+<text x="1369" y="87" text-anchor="middle" fill="#8ab4ff" font-size="22" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">真实命令行界面</text>
+<text x="88" y="142" fill="#7ee787" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">$ npx --yes lotterymcp@latest</text>
+<line x1="74" y1="146" x2="1526" y2="146" stroke="#20242b" stroke-width="1" />
+<text x="88" y="164" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">NEUXSBOT Lottery MCP</text>
+<text x="88" y="202" fill="#f2cc60" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">数据范围: 历史首期 -&gt; 最新一期</text>
+<text x="88" y="240" fill="#f2cc60" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">支持彩种: 福彩3D / 排列3 / 双色球 / 大乐透 / 排列5 / 七星彩 / 快乐8</text>
+<text x="88" y="297" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">1. init     生成本地 MCP 配置片段</text>
+<text x="88" y="335" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">2. doctor   检查接口地址、密钥和网站连通性</text>
+<text x="88" y="373" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">3. login    打开个人中心，复制 MCP 密钥</text>
+<text x="88" y="411" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">4. serve    启动 stdio 服务，供 Claude / Cursor / VS Code 调用</text>
+<text x="88" y="449" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">5. analyze  运行 7 个 Python 本地分析程序</text>
+<text x="88" y="506" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">默认行为:</text>
+<text x="88" y="544" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">  彩种不写死在配置里，AI 对话时可动态指定</text>
+<text x="88" y="582" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">  默认分析期数可改，密钥和调用额度由网站账号控制</text>
+<line x1="74" y1="714" x2="1526" y2="714" stroke="#20242b" stroke-width="1" />
+<text x="88" y="756" fill="#7f8792" font-size="20" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">NEUXSBOT | www.neuxsbot.com | 全历史真实开奖数据接入</text>
 </svg>
