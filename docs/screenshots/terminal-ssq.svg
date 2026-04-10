@@ -1,38 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1020" viewBox="0 0 1600 1020" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1064" viewBox="0 0 1600 1064" fill="none">
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#09111b" />
-<stop offset="100%" stop-color="#111b29" />
-</linearGradient>
-<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#0f1723" />
-<stop offset="100%" stop-color="#111827" />
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0b0b0d" />
+<stop offset="100%" stop-color="#141519" />
 </linearGradient>
 </defs>
-<rect width="1600" height="100%" fill="url(#bg)" />
-<rect x="44" y="40" width="1512" height="940" rx="28" fill="url(#panel)" stroke="#223147" stroke-width="2"/>
-<rect x="44" y="40" width="1512" height="74" rx="28" fill="#0b1220" />
-<circle cx="92" cy="77" r="10" fill="#ff5f57" />
-<circle cx="124" cy="77" r="10" fill="#febc2e" />
-<circle cx="156" cy="77" r="10" fill="#28c840" />
-<text x="220" y="87" fill="#e6edf3" font-size="30" font-family="Consolas, Monaco, 'Courier New', monospace">双色球 示例分析</text>
-<rect x="1260" y="56" width="228" height="40" rx="20" fill="#17314c" stroke="#2d4b69"/>
-<text x="1374" y="82" text-anchor="middle" fill="#8bc5ff" font-size="22" font-family="Consolas, Monaco, 'Courier New', monospace">示例输出</text>
-<text x="88" y="154" fill="#7ee787" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">$ lotterymcp analyze ssq --periods 30</text>
-<text x="88" y="184" fill="#f2cc60" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">示例数据来源: 仓库内置离线样本</text>
-<text x="88" y="226" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">分析期数: 30</text>
-<text x="88" y="268" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">有效记录: 3</text>
-<text x="88" y="310" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">最新期号: 3</text>
-<text x="88" y="352" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">最新红球: 1 2 3 4 5 6</text>
-<text x="88" y="394" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">最新蓝球: 7</text>
-<text x="88" y="436" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">红球热度 Top5: 1, 2, 3, 4, 5</text>
-<text x="88" y="478" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">蓝球热度 Top2: 7, 9</text>
-<text x="88" y="520" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">重复概率: 精确 1.693e-07 | 近似 4+ 0.0049008278</text>
-<text x="88" y="562" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace"></text>
-<text x="88" y="604" fill="#8bc5ff" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">高分推荐:</text>
-<text x="88" y="646" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  红球=1 2 3 4 5 6 | 蓝球=7 | 分数=1.872222</text>
-<text x="88" y="688" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  分区=6-0-0 | 和值=21</text>
-<text x="88" y="730" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace"></text>
-<text x="88" y="772" fill="#7ee787" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">结果文件: results/ssq-analysis-demo.json</text>
-<text x="88" y="986" fill="#5f728c" font-size="22" font-family="Consolas, Monaco, 'Courier New', monospace">NEUXSBOT • www.neuxsbot.com</text>
+<rect width="1600" height="1064" fill="#050505" />
+<rect x="42" y="36" width="1516" height="992" rx="22" fill="url(#bg)" stroke="#2d3139" stroke-width="2" />
+<rect x="42" y="36" width="1516" height="92" rx="22" fill="#111216" />
+<circle cx="92" cy="82" r="9" fill="#ff5f57" />
+<circle cx="122" cy="82" r="9" fill="#febc2e" />
+<circle cx="152" cy="82" r="9" fill="#28c840" />
+<text x="204" y="92" fill="#f3f5f7" font-size="31" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">量子级双色球全匹配深度分析系统</text>
+<rect x="1250" y="58" width="238" height="44" rx="22" fill="#181d24" stroke="#2d3742" />
+<text x="1369" y="87" text-anchor="middle" fill="#8ab4ff" font-size="22" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">真实脚本风格</text>
+<text x="88" y="142" fill="#7ee787" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">$ python examples/python/ssq_quantum/main.py --periods 120</text>
+<line x1="74" y1="146" x2="1526" y2="146" stroke="#20242b" stroke-width="1" />
+<text x="88" y="164" fill="#f2cc60" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">数据范围: 双色球 历史首期 -&gt; 最新一期</text>
+<text x="88" y="202" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">分析期数: 120</text>
+<text x="88" y="240" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">有效记录: 120</text>
+<text x="88" y="278" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">最新期号: 2026048</text>
+<text x="88" y="316" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">最新红球: 03 09 12 16 24 31</text>
+<text x="88" y="354" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">最新蓝球: 07</text>
+<text x="88" y="392" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">理论组合数: 17,721,088</text>
+<text x="88" y="430" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">理论重复概率: 1.693e-07</text>
+<text x="88" y="468" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">红球热度 Top10: 03 07 09 12 16 24 27 31 32 33</text>
+<text x="88" y="506" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">蓝球热度 Top8: 07 09 03 12 15 06 01 10</text>
+<text x="88" y="544" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">完全重号组数: 0</text>
+<text x="88" y="582" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">近似重号组数: 18</text>
+<text x="88" y="620" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">真实成功案例: 5</text>
+<text x="88" y="658" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">模式簇: 簇 2 | 样本 14 | 分区 2-2-2 | 奇偶 3:3</text>
+<text x="88" y="696" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">马尔科夫转移: 09 -&gt; 12 | 概率 0.1732</text>
+<text x="88" y="753" fill="#8ab4ff" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">高分推荐:</text>
+<text x="88" y="791" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">  红球=03 09 12 16 24 31 | 蓝球=07 | 分数=1.872222 | 分区=2-2-2 | 和值=95</text>
+<text x="88" y="848" fill="#7ee787" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">输出文件: results/ssq-analysis.json</text>
+<line x1="74" y1="980" x2="1526" y2="980" stroke="#20242b" stroke-width="1" />
+<text x="88" y="1022" fill="#7f8792" font-size="20" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">NEUXSBOT | www.neuxsbot.com | 全历史真实开奖数据接入</text>
 </svg>
