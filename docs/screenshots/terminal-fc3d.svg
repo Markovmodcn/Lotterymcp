@@ -1,37 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="978" viewBox="0 0 1600 978" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="950" viewBox="0 0 1600 950" fill="none">
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#09111b" />
-<stop offset="100%" stop-color="#111b29" />
-</linearGradient>
-<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#0f1723" />
-<stop offset="100%" stop-color="#111827" />
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0b0b0d" />
+<stop offset="100%" stop-color="#141519" />
 </linearGradient>
 </defs>
-<rect width="1600" height="100%" fill="url(#bg)" />
-<rect x="44" y="40" width="1512" height="898" rx="28" fill="url(#panel)" stroke="#223147" stroke-width="2"/>
-<rect x="44" y="40" width="1512" height="74" rx="28" fill="#0b1220" />
-<circle cx="92" cy="77" r="10" fill="#ff5f57" />
-<circle cx="124" cy="77" r="10" fill="#febc2e" />
-<circle cx="156" cy="77" r="10" fill="#28c840" />
-<text x="220" y="87" fill="#e6edf3" font-size="30" font-family="Consolas, Monaco, 'Courier New', monospace">福彩3D 示例分析</text>
-<rect x="1260" y="56" width="228" height="40" rx="20" fill="#17314c" stroke="#2d4b69"/>
-<text x="1374" y="82" text-anchor="middle" fill="#8bc5ff" font-size="22" font-family="Consolas, Monaco, 'Courier New', monospace">示例输出</text>
-<text x="88" y="154" fill="#7ee787" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">$ lotterymcp analyze fc3d --periods 30</text>
-<text x="88" y="184" fill="#f2cc60" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">示例数据来源: 仓库内置离线样本</text>
-<text x="88" y="226" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">分析期数: 30</text>
-<text x="88" y="268" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">有效记录: 30</text>
-<text x="88" y="310" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">最新期号: 1</text>
-<text x="88" y="352" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">最新号码: 1 2 3</text>
-<text x="88" y="394" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">反推命中案例: 4</text>
-<text x="88" y="436" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">最佳历史长度: 100</text>
-<text x="88" y="478" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">类型分布: group3=2, group6=2</text>
-<text x="88" y="520" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">回测验证: 完全命中 1 次 | 两码命中 2 次 | 样本 3 期</text>
-<text x="88" y="562" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace"></text>
-<text x="88" y="604" fill="#8bc5ff" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">高分推荐:</text>
-<text x="88" y="646" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">  号码=123 | 类型=direct | 分数=0.987654 | 和值=6 | 奇偶=2:1</text>
-<text x="88" y="688" fill="#d7e2f0" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace"></text>
-<text x="88" y="730" fill="#7ee787" font-size="28" font-family="Consolas, Monaco, 'Courier New', monospace">结果文件: results/fc3d-analysis-demo.json</text>
-<text x="88" y="944" fill="#5f728c" font-size="22" font-family="Consolas, Monaco, 'Courier New', monospace">NEUXSBOT • www.neuxsbot.com</text>
+<rect width="1600" height="950" fill="#050505" />
+<rect x="42" y="36" width="1516" height="878" rx="22" fill="url(#bg)" stroke="#2d3139" stroke-width="2" />
+<rect x="42" y="36" width="1516" height="92" rx="22" fill="#111216" />
+<circle cx="92" cy="82" r="9" fill="#ff5f57" />
+<circle cx="122" cy="82" r="9" fill="#febc2e" />
+<circle cx="152" cy="82" r="9" fill="#28c840" />
+<text x="204" y="92" fill="#f3f5f7" font-size="31" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">福彩3D逆向推演预测系统</text>
+<rect x="1250" y="58" width="238" height="44" rx="22" fill="#181d24" stroke="#2d3742" />
+<text x="1369" y="87" text-anchor="middle" fill="#8ab4ff" font-size="22" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">真实脚本风格</text>
+<text x="88" y="142" fill="#7ee787" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">$ python examples/python/fc3d_markov/main.py --periods 200</text>
+<line x1="74" y1="146" x2="1526" y2="146" stroke="#20242b" stroke-width="1" />
+<text x="88" y="164" fill="#f2cc60" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">数据范围: 福彩3D 历史首期 -&gt; 最新一期</text>
+<text x="88" y="202" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">分析期数: 200</text>
+<text x="88" y="240" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">有效记录: 200</text>
+<text x="88" y="278" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">最新期号: 20260409-123</text>
+<text x="88" y="316" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">最新号码: 4 7 2</text>
+<text x="88" y="354" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">逆向命中案例: 68</text>
+<text x="88" y="392" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">最佳历史长度: 500</text>
+<text x="88" y="430" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">类型分布: 直选 21 | 组三 27 | 组六 20</text>
+<text x="88" y="468" fill="#c4b5fd" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">回测验证: 完全命中 6 次 | 两码命中 38 次 | 样本 100 期</text>
+<text x="88" y="506" fill="#c4b5fd" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">命中率: 完全 6.0% | 两码 38.0% | 窗口 100 期</text>
+<text x="88" y="563" fill="#8ab4ff" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">高分推荐:</text>
+<text x="88" y="601" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">  472 | 直选 | 分数 0.912441 | 和值 13 | 奇偶 1:2 | 跨度 5</text>
+<text x="88" y="639" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">  427 | 直选 | 分数 0.901237 | 和值 13 | 奇偶 1:2 | 跨度 5</text>
+<text x="88" y="677" fill="#d9dde3" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">  227 | 组三   | 分数 0.874220 | 和值 11 | 奇偶 1:2 | 跨度 5</text>
+<text x="88" y="734" fill="#7ee787" font-size="26" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">输出文件: results/fc3d-analysis.json</text>
+<line x1="74" y1="866" x2="1526" y2="866" stroke="#20242b" stroke-width="1" />
+<text x="88" y="908" fill="#7f8792" font-size="20" font-family="Consolas, Cascadia Mono, Microsoft YaHei UI, monospace">NEUXSBOT | www.neuxsbot.com | 全历史真实开奖数据接入</text>
 </svg>
