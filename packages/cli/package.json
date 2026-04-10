@@ -3,7 +3,7 @@
   "version": "0.1.7",
   "private": false,
   "type": "module",
-  "description": "Lotterymcp command line entrypoint for the NEUXSBOT lottery service",
+  "description": "Lotterymcp CLI for 福彩3D、排列3、双色球、大乐透、排列5、七星彩、快乐8 MCP access",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,7 +31,14 @@
     "cli",
     "lottery",
     "neuxsbot",
-    "nbcp"
+    "nbcp",
+    "fc3d",
+    "pl3",
+    "ssq",
+    "dlt",
+    "pl5",
+    "qxc",
+    "kl8"
   ],
   "homepage": "https://www.neuxsbot.com",
   "publishConfig": {
